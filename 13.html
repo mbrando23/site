@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+      <link href="style.css" type="text/css" rel="stylesheet">
+      <script type="text/javascript" src="13.js"></script>
+      <title>Palmeiras' Boutique</title>	
+   </head>
+	
+   <body onload="firstPage()">		
+      <header id="header">
+         <div class="w3-container w3-teal">
+            <h1>Welcome to Palmeiras' Boutique</h1>
+         </div>
+         <div id="menu">
+            <ul>
+            <li onmousedown="turnOpacityy()" onmouseup="turnOpacity('content-1');">
+            <a href=13.html#1>About Us</button></a></li>
+            <li onmousedown="turnOpacityy()" onmouseup="turnOpacity('content-2');">
+            <a href=13.html#1>Overview</a></li>
+            <li onmousedown="turnOpacityy()" onmouseup="turnOpacity('content-3');">
+            <a href=13.html#1>Products</a></li>
+            <li onmousedown="turnOpacityy()" onmouseup="turnOpacity('content-4');">
+            <a href=13.html#1 onclick="w3_open()">Shopping</a></li>
+            <li onmousedown="turnOpacityy()" onmouseup="turnOpacity('content-7');">
+            <a href=13.html#1>Cart</a></li>
+            <li onmousedown="turnOpacityy()" onmouseup="turnOpacity('content-5');">
+            <a href=13.html#1>Feedback</a></li>
+            <li onmousedown="turnOpacityy()" onmouseup="turnOpacity('content-6');">
+            <a href=13.html#1>Your Orders</a></li>
+            </ul>
+         </div>
+         <span id="cart">
+            <canvas id="canvas" width="60" height="60"style="background-color:teal">
+            </canvas>
+            <!-- We are using Canvas too. -->
+				<script>
+				var canvas = document.getElementById("canvas");
+				var ctx = canvas.getContext("2d");
+				var radius = canvas.height / 2;
+				ctx.translate(radius, radius);
+				radius = radius * 0.90
+				setInterval(drawClock, 1000);
+				
+				function drawClock() {
+				  drawFace(ctx, radius);
+				  drawNumbers(ctx, radius);
+				  drawTime(ctx, radius);
+				}
+				
+				function drawFace(ctx, radius) {
+				  var grad;
+				  ctx.beginPath();
+				  ctx.arc(0, 0, radius, 0, 2*Math.PI);
+				  ctx.fillStyle = 'white';
+				  ctx.fill();
+				  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+				  grad.addColorStop(0, '#333');
+				  grad.addColorStop(0.5, 'white');
+				  grad.addColorStop(1, '#333');
+				  ctx.strokeStyle = grad;
+				  ctx.lineWidth = radius*0.1;
+				  ctx.stroke();
+				  ctx.beginPath();
+				  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+				  ctx.fillStyle = '#333';
+				  ctx.fill();
+				}
+				
+				function drawNumbers(ctx, radius) {
+				  var ang;
+				  var num;
+				  ctx.font = radius*0.15 + "px arial";
+				  ctx.textBaseline="middle";
+				  ctx.textAlign="center";
+				  for(num = 1; num < 13; num++){
+				    ang = num * Math.PI / 6;
+				    ctx.rotate(ang);
+				    ctx.translate(0, -radius*0.85);
+				    ctx.rotate(-ang);
+				    ctx.fillText(num.toString(), 0, 0);
+				    ctx.rotate(ang);
+				    ctx.translate(0, radius*0.85);
+				    ctx.rotate(-ang);
+				  }
+				}
+				
+				function drawTime(ctx, radius){
+				    var now = new Date();
+				    var hour = now.getHours();
+				    var minute = now.getMinutes();
+				    var second = now.getSeconds();
+				    //hour
+				    hour=hour%12;
+				    hour=(hour*Math.PI/6)+
+				    (minute*Math.PI/(6*60))+
+				    (second*Math.PI/(360*60));
+				    drawHand(ctx, hour, radius*0.5, radius*0.07);
+				    //minute
+				    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
+				    drawHand(ctx, minute, radius*0.8, radius*0.07);
+				    // second
+				    second=(second*Math.PI/30);
+				    drawHand(ctx, second, radius*0.9, radius*0.02);
+				}
+				
+				function drawHand(ctx, pos, length, width) {
+				    ctx.beginPath();
+				    ctx.lineWidth = width;
+				    ctx.lineCap = "round";
+				    ctx.moveTo(0,0);
+				    ctx.rotate(pos);
+				    ctx.lineTo(0, -length);
+				    ctx.stroke();
+				    ctx.rotate(-pos);
+				}
+				</script>    
+         </span>
+      </header>			
+      <main>				
+         <div class="content" id="1">		
+
+            <div class="content-">
+               <p>Please Choose an Option Above...</p>      		
+            </div>			
+			
+            <div class="content-0">
+               <div class="w3-container">  
+                  <p>WE ARE USING W3.CSS TECHONOLOGY!!!</p>  
+                  <p><i class="fa fa-spinner w3-spin" style="font-size:64px"></i></p>
+               </div>                   		
+            </div>	   
+			   
+            <div class="content-1">												   
+               <div class="w3-container w3-center w3-animate-left">
+               <div class="w3-display-container w3-hover-opacity" style="width:130%">
+                  <img src="images/palm.jpeg" alt="Avatar" style="width:130%">
+                  <div class="w3-display-middle w3-display-hover w3-xlarge">
+                     <a href="images/fifa.jpg" target="_blank">
+                     <button class="w3-button w3-black">The First Champion of The World</button></a>
+                 </div>
+               </div>
+               </div>                           			 	 
+            </div> 				 		
+            		 	 				
+            <div class="content-2">							
+               <div class="w3-container w3-teal">
+                  <h4>Boutique</h4>
+               </div>
+
+               <div class="w3-row-padding w3-margin-top">
+                  <div class="w3-third">
+                     <div class="w3-card">
+                        <img src="images/official.jpeg" style="width:100%">
+                        <div class="w3-container">
+                           <h4>T-Shirts</h4>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="w3-third">
+                     <div class="w3-card">
+                        <img src="images/souvenir.jpeg" style="width:100%">
+                        <div class="w3-container">
+                           <h4>Souvenirs</h4>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="w3-third">
+                     <div class="w3-card">
+                        <img src="images/ball.jpeg" style="width:100%">
+                        <div class="w3-container">
+                           <h4>Balls</h4>
+                        </div>
+                     </div>
+                  </div>
+               </div>       
+               <div class="w3-row-padding w3-margin-top">
+                  <div class="w3-third">
+                     <div class="w3-card">
+                        <img src="images/toy.jpeg" style="width:100%">
+                        <div class="w3-container">
+                           <h4>Toys</h4>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="w3-third">
+                     <div class="w3-card">
+                        <img src="images/game.jpeg" style="width:100%">
+                        <div class="w3-container">
+                           <h4>Games</h4>
+                        </div>
+                     </div>
+                  </div>                  
+               </div>
+                 								   	
+            </div>
+			   
+            <div class="content-3">								
+               <span id="2"><img src="images/official.jpeg" onclick="shoppingCart()" 
+               alt="Chart" width="368" height="368"></span><br><br><br><hr>     
+               <span id="3"><img src="images/souvenir.jpeg" onclick="shoppingCart()" 
+               alt="Chart" width="368" height="368"></span><br><br><br><hr>
+               <span id="4"><img src="images/ball.jpeg" onclick="shoppingCart()" 
+               alt="Chart" width="368" height="368"></span><br><br><br><hr><br>
+               <span id="5"><img src="images/toy.jpeg" onclick="shoppingCart()" 
+               alt="Chart" width="368" height="368"></span><br><br><br><hr>
+               <span id="6"><img src="images/game.jpeg" onclick="shoppingCart()" 
+               alt="Chart" width="368" height="368"></span><br><br><br><hr>                                 
+            </div>
+				
+            <div class="content-4">	
+               <form action="" onreset="alert('Please Choose Again'); myReset()">                                 
+                  <div class="w3-row">                  
+                     <div class="w3-col s6" style="min-width:250px; min-height:120px">              
+                        <p><strong>T-shirts:</strong> </p>                             
+                        <input type="button" onclick="calc('cart1', 'shopping1')" value="Add to Cart" 
+                         style="width:125px;" class="w3-button w3-teal"> 
+                        <input type="number" id="cart1" name="item_qty">                                  
+                        <select id="shopping1" name="Option1" style="text-input" value="0">
+                           <option value="34" >Custom $34.00</option>
+                           <option value="21" >Kid's T-Shirt $21.00  </option>
+                           <option value="15" >Women's T-Shirt $15.00</option>
+                           <option value="18" >Long Sleeve $18.00</option>
+                           <option value="54" >Oficial T-Shirt $54.00</option>
+                        </select>                                           
+                     </div>
+                      
+                     <div class="w3-col s6" style="min-width:200px; min-height:120px">                                             
+                        <p><strong>Souvenirs:</strong></p>               
+                        <input type="button" onclick="calc1('cart2', 'shopping2')" value="Add to Cart" 
+                         style="width:125px;" class="w3-button w3-teal">
+                        <input type="number" id="cart2" name="item_qty">                            
+                        <select id="shopping2" name="Option2" style="text-input" value="0";>
+                           <option value="23" >Pillow  $23.00</option>
+                           <option value="10" >Cup     $10.00 </option>
+                           <option value="18" >Key Chain $18.00 </option>
+                           <option value="13" >Banner $13.00</option>
+                           <option value="8" >Pen  $8.00</option>
+                        </select>                                             
+                     </div>
+              
+                     <div class="w3-col s6" style="min-width:200px; min-height:120px">  
+                        <p><strong>Balls:</strong></p>                                       
+                        <input type="button" onclick="calc2('cart3', 'shopping3')" value="Add to Cart" 
+                         style="width:125px;" class="w3-button w3-teal">
+                         <input type="number" id="cart3" name="item_qty">                                         
+                         <select id="shopping3" name="Option3" style="text-input" value="0">
+                            <option value="32" >Initial $32.00</option>
+                            <option value="25" >Kids    $25.00 </option>
+                            <option value="45" >VolleyBall $45.00 </option>
+                            <option value="66" >BasketBall $66.00</option>
+                            <option value="77" >Professional $77.00</option>
+                         </select>                     
+                     </div>
+                     
+                     <div class="w3-col s6" style="min-width:200px; min-height:120px">                       
+                        <p><strong>Toys:</strong></p>                                                       
+                        <input type="button" onclick="calc3('cart4', 'shopping4')" value="Add to Cart" 
+                         style="width:125px;" class="w3-button w3-teal">
+                        <input type="number" id="cart4" name="item_qty">
+                        <select id="shopping4" name="Option4" style="text-input" value="0">
+                           <option value="18" >Doll  $18.00   </option>
+                           <option value="15" >Little Balls $15.00 </option>
+                           <option value="54" >Players $54.00 </option>
+                           <option value="45" >Greater Dolls $45.00  </option>
+                           <option value="88" >Stadium $88.00 </option>
+                        </select>                                                                                                                  
+                     </div>                                          
+                     
+                     <div class="w3-col s6" style="min-width:200px; min-height:120px">  
+                        <p><strong>Games:</strong></p>                                                                                               
+                        <input type="button" onclick="calc4('cart5', 'shopping5')" value="Add to Cart" 
+                         style="width:125px;" class="w3-button w3-teal">
+                        <input type="number" id="cart5" name="item_qty" size="4">
+                        <select id="shopping5" name="Option5" style="text-input" value="0">               
+                           <option value="21" >Antique $21.00</option>
+                           <option value="19" >Buttons $19.00</option>
+                           <option value="13" >Cards $13.00</option>
+                           <option value="17" >PingPong $17.00</option>
+                           <option value="18" >Pinball $19.00</option>
+                        </select>                      
+                     </div>                     
+
+                  </div>
+                  <hr>
+                  <input type="reset" value="Reset" class="w3-button w3-teal	">                                               			     
+               </form>	                               
+            </div>
+			      
+            <div class="content-5">
+               <form onreset="alert('Please Go Back and Fill Again'); firstPage()" 
+               onsubmit="alert('We did not send the data');">	
+                  E-mail address:  	
+                  <input type="email" value="">              
+                  <p>Feedback</p>
+                  <input type="text" value="" size="90">                			             							
+                  <p>Browse...(for file uploads)</p>
+                  <input type="file" value="Submit"/><br><br>
+                  <input type="reset" value="Reset"/>				   
+                  <input type="submit" value="Submit"/><br>               
+               </form>                  
+            </div>
+				
+            <div class="content-6">	
+               <form onsubmit="alert('We did not send the data');">
+                  Password Validation: 
+                  <input type="password" value=""><br><br>               
+                  <input type="radio" value="T-Shirt" name="test">T-Shirt<br>               
+                  <input type="radio" value="Souvenir" name="test">Souvenir<br>              
+                  <input type="radio" value="Ball" name="test">Ball<br>               
+                  <input type="radio" value="Toy" name="test">Toy<br>               
+                  <input type="radio" value="Game" name="test">Game<br>				
+				
+                  <p>Search:</p>
+                  <input type="search" value="">
+  
+                  <p>Date control</p> 
+                  <input type="date" value="" name="Date"><br>				
+                                			                           
+                  <input type="image" value="Submit" src="images/submit.png">	                                                                 
+               </form>                               
+            </div>				
+				
+            <div id="7" class="content-7">	
+               <form onreset="firstPage()" action="13.php" method="post" id="myForm">
+               <div class="w3-row-padding w3-margin-top">
+                  <div class="w3-third" style="min-width:260px"> 
+                     <input type="radio" name="card" value="Mastercard">Mastercard<br>
+                     <input type="radio" name="card" value="Visa">Visa<br>
+                     <input type="radio" name="card" value="American Express">American Express<br>                                                                                                          	
+                  </div>
+                  <div class="w3-third" style="min-width:260px">                                    
+                     <input id = "card1" onblur = "validateCard('card1', 'cards', 0);" size="19" name="card1"/><br>
+                     <span class = 'cards' style='color:red'>Invalid credit card number</span>
+                     <br>Expiration Date:
+                     <input id = "date1" onblur = "validateDate('date1', 'date', 0);" size="9" name="expir"/><br> 
+                     <span class = 'date' style='color:red'>Invalid date</span><br>                 
+                  </div>
+                  <div class="w3-third" style="min-width:260px">   
+                     <input type="button" onclick="myFunction()" value="Total">
+                     <p id="demo">Click the button above to see the total.</p>
+                     <input type="hidden" id="demo2" name="itens" value="">
+                     <input type="hidden" id="demo3" name="total" value="">                                 
+                  </div>
+               </div>                                                
+                
+               <div class="w3-row-padding"> 
+                  <div class="w3-third" style="min-width:260px"> 
+                     First Name:               				   
+                     <input id = "name1" onblur = "validateName('name1', 'name', 0);" size="10" value="" name="name1"
+                      class="w3-input w3-border"/>
+                     <span class = 'name' style='color:red'>Invalid First Name</span><br>               
+                      Last Name:
+                     <input id = "name2" onblur = "validateName('name2', 'name', 1);" size="10" value="" name="name2"
+                      class="w3-input w3-border"/>
+                     <span class = 'name' style='color:red'>Invalid Last Name</span>
+                  </div> 
+                  <div class="w3-third" style="min-width:260px">                 
+                     <p>Address:</p>               
+                     <input id = "name3" onblur = "validateName('name3', 'name', 2);" size="19" value="" name="name3"/>
+                     <span class = 'name' style='color:red'>Invalid Str./Av.</span><br>   
+                     <input id = "number1" onblur = "validateNumber('number1', 'num', 0);" size="10" value="" name="number1"/>
+                     <span class = 'num' style='color:red'>Invalid number</span><br>               
+                     <input id = "state1" onblur = "validateState('state1', 'state', 0);" size="10" value="" name="name4"/>
+                     <span class = 'state' style='color:red'>Invalid State Abbreviation</span>
+                  </div> 
+                  <div class="w3-third" style="min-width:260px">                                                                				
+                     <p>Fill with your telephone number:</p>
+                     <input id = "tel1" onblur = "validateTel('tel1', 'tel', 0);" size="21" value="" name="number2"/>
+                     <span class = 'tel' style='color:red'>Invalid! Correct: XXX-XXX-XXXX</span><br><hr>                                      		   
+                  </div>                     
+               </div>
+               <input class="w3-button w3-teal" type="reset" value="Reset">				   
+               <input class="w3-button w3-teal" type="button" onclick="myFunction2()" value="Submit"><br>
+            </div>
+         </div>				
+      </form>				
+         </div>       		     
+      </main>
+
+      <nav id="left">
+         <div class="content">
+            <span class="w3-animate-fading"onclick="firstPage()"><a href="13.html"><img src="images/palm.jpeg" 
+            alt="Chart" width="180" height="95"></a></span>
+            <ul>
+               <li><a href="http://www.palmeiras.com.br/home/" target="_blank">
+               Oficial Team Page</a></li>
+               <li><a href="https://en.wikipedia.org/wiki/Sociedade_Esportiva_Palmeiras" 
+               target="_blank">Wikipedia</a></li>
+               <li><a href="https://us.soccerway.com/teams/brazil/sociedade-esportiva-palmeiras/310/" 
+               target="_blank">Soccer Way</a></li>
+               <li><a href="http://dictionary.reverso.net/portuguese-english/palmeiras" 
+               target="_blank">Dictionary</a></li>
+               <li><a href="https://www.fifa.com/live-scores/clubs/club=brazil-palmeiras-44254/index.html" 
+               target="_blank">Live Scores</a></li>
+            </ul>
+	         <h2>Shopping</h2>
+            <ul>
+               <li onclick="prod()"><a href="13.html#2">T-shirts</a></li>
+               <li onclick="prod()"><a href="13.html#3">Souvenirs</a></li>
+               <li onclick="prod()"><a href="13.html#4">Balls</a></li>
+               <li onclick="prod()"><a href="13.html#5">Toys</a></li>
+               <li onclick="prod()"><a href="13.html#6">Games</a></li>
+            </ul>         
+         </div>      
+      </nav>	
+
+      <div id="right">
+         <div class="content">           
+            <p><strong>The Anthem of Palmeiras</strong><br><br>
+               Quando surge o alviverde imponente
+               no gramado em que a luta o aguarda.
+               Sabe bem o que vem pela frente
+               que a dureza do prélio não tarda!
+               <br>
+               E o Palmeiras no ardor da partida
+               transformando a lealdade em padrão.
+               Sabe sempre levar de vencida
+               e mostrar que, de fato, é campeão!
+               <br>       
+               Defesa que ninguém passa, 
+               linha atacante de raça.
+               Torcida que canta e vibra...
+               <br>
+               Defesa que ninguém passa, 
+               linha atacante de raça.
+               Torcida que canta e vibra...
+               <br>
+               Por nosso alviverde inteiro, 
+               que sabe ser brasileiro, 
+               ostentando a sua fibra!!!
+            </p>
+         </div>
+	
+      </div>
+	   <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+	         <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>       
+            <br><a href="13.html#7"><img src="images/cart.png" onclick="shoppingCart(); myFunction()" 
+            alt="Chart" width="80" height="80"></a>
+            <p id="demo23"></p>
+            
+      </div>	
+      <footer>Copyright &copy; MiltonBrando email: mbrando32@byui.edu</footer>	
+			
+   </body>
+</html>

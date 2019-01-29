@@ -1,0 +1,195 @@
+body {
+   margin: 0;
+	padding: 0;
+	overflow: hidden;
+	height: 100%; 
+	max-height: 100%; 
+	font-family:Sans-serif;
+	line-height: 1.5em;
+}
+
+footer {
+    padding: 1em;
+    color: white;
+    background-color: #BCCE98;
+    clear: left;
+    text-align: center;
+    font-size: x-small;
+    position: fixed;
+	 bottom: 0px;
+	 left: 0px; 
+	 right: 0px;
+}
+
+
+main {
+	position: fixed;
+	top: 80px; /* the height of the header */
+	bottom: 40px;
+	left: 200px; 
+	right: 200px;
+	overflow: scroll; 
+	background: #fff;
+}
+				
+#header {
+	position: absolute;
+	top: 0;
+	left: 200px;
+	width: 100%;
+	height: 150px; 
+	overflow: hidden; /* To enable scrollbars, change "hidden" to "scroll" */
+	background: #fff;
+}
+				
+#left {
+	position: absolute; 
+	top: 0px; /* Set this to the height of the header */
+	bottom: 40px; 
+	left: 0; 
+	width: 200px;
+	overflow: auto;
+	background: #DAE9cc; 		
+}
+
+#right {
+	position: absolute; 
+	top: 110px; /* Set this to the height of the header */
+	bottom: 40px; /* Set this to the height of the footer */
+	right: 0; 
+	width: 200px;
+	overflow: hidden; 
+	background: #DAE9BC; 
+	overflow: auto;		
+}
+				
+.content {
+	margin: 15px; /* Provides padding for the content */
+}
+		
+h2 {
+	left: 220px; 	
+	color: #555;
+}
+
+h3 {
+	text-align : center; 	
+	color: #555;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+		
+nav ul a {
+	color: darkgreen;
+	text-decoration: none;
+}
+
+input[type=number]{
+    width: 45px;
+} 
+
+
+/* Menu */
+
+#menu {
+	width: 950px;
+	height: 36px;
+	margin: 1 auto;
+	padding: 0;
+	background: #DAE9BC;
+	border: 5px solid gray;
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+	position: absolute;
+}
+
+
+#menu ul {
+	margin: 0;
+	padding: 0;
+
+}
+
+#menu li {
+	display: inline;
+	float: left;
+	width: 130px;
+	height: 26px;
+	padding-top: 1px;
+	text-align: center;
+	text-decoration: none;
+   color: #398080;
+}
+#menu a {
+	display: block;
+	float: left;
+	width: 98px;
+	height: 26px;
+	padding-top: 10px;
+	text-align: center;
+	text-decoration: none;
+   color: #398080;
+}
+
+#menu a:hover, #menu .active a {
+	background: #DAE9CC;
+}
+
+
+#cart {
+   position: absolute;
+   right: 280px;
+   bottom: 40px;
+}
+
+.content-0 {
+   visibility: visible;
+   position: absolute;
+}
+
+.content-1 {
+   visibility: hidden;
+   position: absolute;
+}
+
+
+.content-2 {
+   visibility: hidden;
+   position: absolute;
+}
+
+
+.content-3 {
+   visibility: hidden;
+   position: absolute;
+}
+
+.content-4 {
+   visibility: hidden;
+   position: absolute;
+}
+
+.content-5 {
+   visibility: hidden;
+   position: absolute;
+}
+
+.content-6 {
+   visibility: hidden;
+   position: absolute;
+}
+
+.content-7 {
+   visibility: hidden;
+   position: absolute;
+}
+
+.confirm {
+	padding-top: 10px;
+   text-align: justify;
+   color: #398080;
+}
